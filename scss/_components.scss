@@ -1,0 +1,111 @@
+.form {
+    width: 100%;
+    max-width: 55rem;
+    @include flex(column, center, center);
+    background-color: $green;
+    border-radius: 2rem;
+    p {
+        color: $white;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    form {
+        width: 100%;
+        @include flex(column, center, center);
+        input {
+            width: 100%;
+            max-width: 50rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 1rem;
+            background-color: $white;
+            color: $green;
+            font-size: 1.6rem;
+            &::placeholder {
+                color: rgba($brown, 0.5);
+            }
+        }
+        button {
+            width: 100%;
+            max-width: 50rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 1rem;
+            background-color: $brown;
+            color: $white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            &:hover {
+                background-color: darken($brown, 5%);
+            }
+        }
+    }
+    @include responsive(1119px) {
+        max-width: 40rem;
+        form {
+            input {
+                max-width: 35rem;
+            }
+            button {
+                max-width: 35rem;
+            }
+        }
+    }
+    @include responsive(845px) {
+        max-width: 60rem;
+        form {
+            input {
+                max-width: 55rem;
+            }
+            button {
+                max-width: 55rem;
+            }
+        }
+    }
+    @include responsive(617px) {
+        max-width: 40rem;
+        form {
+            input {
+                max-width: 35rem;
+            }
+            button {
+                max-width: 35rem;
+            }
+        }
+    }
+    @include responsive(468px) {
+        form {
+            input {
+                max-width: 30rem;
+            }
+            button {
+                max-width: 28rem;
+            }
+        }
+    }
+}
+
+.hero-footer {
+    @include flex(row, center, center);
+    gap: 2.5rem;
+    background-color: $brown;
+    p {
+        color: $white;
+        font-weight: 500;
+    }
+    .first {
+        color: rgba($white, 0.25);
+    }
+    .second {
+        color: rgba($white, 0.5);
+    }
+    @include responsive(468px) {
+        .second {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,322 @@
+.s-hero {
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+
+    &::before {
+        left: 0;
+        background-image: url("../imgs/s-hero-leaf-right.svg");
+    }
+
+    &::after {
+        right: 0;
+        background-image: url("../imgs/s-hero-leaf-left.svg");
+    }
+
+    .hero-container {
+        @include flex(row, center, center);
+        gap: 2.4rem;
+        padding: 10rem 0;
+    }
+
+    .text {
+        width: 100%;
+        max-width: 55rem;
+        text-align: center;
+        h2 {
+            span {
+                font-weight: 600;
+                font-size: 8rem;
+                line-height: 180%;
+            }
+        }
+    }
+    @include responsive(1119px) {
+        .text {
+            max-width: 40rem;
+        }
+    }
+    @include responsive(845px) {
+        &::before,
+        &::after {
+            display: none;
+        }
+        background-image: url("../imgs/s-hero-leaf-right.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        .hero-container {
+            @include flex(column, center, center);
+            gap: 4rem;
+        }
+        .text {
+            max-width: 60rem;
+        }
+    }
+    @include responsive(617px) {
+        .text {
+            max-width: 40rem;
+            h2 {
+                span {
+                    line-height: 120%;
+                }
+            }
+        }
+    }
+    @include responsive(468px) {
+        background-size: auto;
+        .hero-container {
+            max-width: 37rem;
+            margin: 0 auto;
+            padding: 3rem 0;
+            .text {
+                span {
+                    font-size: 6rem;
+                }
+            }
+        }
+    }
+}
+
+.s-bem-estar {
+    text-align: center;
+    h2 {
+        padding: 4rem 0;
+    }
+    img {
+        width: 100%;
+        max-width: 100rem;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+    }
+    p {
+        width: 100%;
+        max-width: 100rem;
+        margin: 0 auto;
+        line-height: 180%;
+        margin-bottom: 4rem;
+    }
+    @include responsive(468px) {
+        h2 {
+            padding-bottom: 2rem;
+        }
+        img {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.s-oleos-essenciais {
+    background-image: url("../imgs/oleos-essenciais.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 4rem 0;
+    h2 {
+        margin-bottom: 4rem;
+    }
+    .video-texto {
+        @include flex(row, center, center);
+        gap: 2.4rem;
+        width: 100%;
+        iframe {
+            max-width: 56rem;
+        }
+        p {
+            background-color: rgba($white, 0.6);
+            border-radius: 2rem;
+            max-width: 60rem;
+            text-align: justify;
+            padding: 4rem 1rem;
+            line-height: 180%;
+        }
+    }
+    @include responsive(1119px) {
+        .video-texto {
+            flex-direction: column;
+            gap: 4rem;
+            iframe {
+                max-width: 100%;
+            }
+            p {
+                max-width: 100%;
+            }
+        }
+    }
+    @include responsive(468px) {
+        background-position: center;
+    }
+}
+
+.s-qualidade {
+    margin-top: 6rem;
+    .qualidade-container {
+        @include flex(row, center, center);
+        gap: 10rem;
+        margin-bottom: 6rem;
+        .card {
+            @include flex(column, center, center);
+            gap: 1rem;
+            img {
+                max-width: 10rem;
+            }
+            h5 {
+                color: $green;
+                font-weight: 500;
+            }
+        }
+    }
+    h2 {
+        max-width: 100rem;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+    }
+    p {
+        max-width: 100rem;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+        line-height: 180%;
+    }
+    @include responsive(1119px) {
+        .qualidade-container {
+            gap: 2.4rem;
+        }
+    }
+    @include responsive(859px) {
+        .qualidade-container {
+            flex-direction: column;
+            gap: 4rem;
+        }
+    }
+    @include responsive(617px) {
+        h2 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.s-kits {
+    h2 {
+        max-width: 100rem;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+    }
+    .kits-container {
+        @include flex(row, center, center);
+        gap: 2rem;
+        margin-bottom: 4rem;
+        .kit-card {
+            @include flex(column, center, center);
+            gap: 1rem;
+            border: 2px solid $brown;
+            border-radius: 2rem;
+            background-color: rgba($brown, 0.15);
+            padding: 1rem;
+            h6 {
+                color: $brown;
+                font-size: 1.8rem;
+                font-weight: 400;
+            }
+            a {
+                @include flex(row, center, center);
+                gap: 1rem;
+                color: $brown;
+                font-size: 1.8rem;
+                font-weight: 500;
+                img {
+                    width: 2rem;
+                }
+                transition: text-decoration 0.3s ease;
+                &:hover {
+                    text-decoration: 2px underline;
+                }
+            }
+        }
+    }
+    @include responsive(1119px) {
+        .kits-container {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.s-cta {
+    background-image: url("../imgs/gota-de-oleo.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 4rem 0;
+    h2 {
+        max-width: 100rem;
+        font-weight: 400;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+    }
+    .s-cta-container {
+        @include flex(row, center, center);
+        gap: 2.4rem;
+        .text {
+            max-width: 60rem;
+            p {
+                text-align: justify;
+                background-color: rgba($white, 0.6);
+                border-radius: 2rem;
+                padding: 3rem 2rem;
+                margin-bottom: 2rem;
+            }
+            h4 {
+                font-weight: 400;
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+    }
+    @include responsive(1190px) {
+        .s-cta-container {
+            gap: 1rem;
+            margin: 0 auto;
+            p,
+            h4 {
+                max-width: 50rem;
+            }
+        }
+    }
+    @include responsive(896px) {
+        .s-cta-container {
+            h4 {
+                font-size: 2rem;
+            }
+        }
+    }
+    @include responsive(845px) {
+        .s-cta-container {
+            @include flex(column, center, center);
+            p,
+            h4 {
+                max-width: 60rem;
+            }
+        }
+    }
+    @include responsive(617px) {
+        .s-cta-container {
+            p,
+            h4 {
+                max-width: 50rem;
+            }
+        }
+    }
+}

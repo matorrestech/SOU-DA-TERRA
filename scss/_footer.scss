@@ -1,0 +1,15 @@
+footer {
+    .footer-container {
+        @include flex(row, center, space-between);
+        padding: 3rem 0;
+    }
+    @include responsive(845px) {
+        .footer-container {
+            @include flex(column, center, center);
+            gap: 2rem;
+            p {
+                text-align: center;
+            }
+        }
+    }
+}
