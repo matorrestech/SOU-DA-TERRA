@@ -2,11 +2,36 @@ footer {
     .footer-container {
         @include flex(row, center, space-between);
         padding: 3rem 0;
+        .left {
+            @include flex(column, flex-start, center);
+            gap: 1rem;
+            a {
+                font-size: 1.4rem;
+                color: $dark;
+                @include flex(row, center, center);
+                gap: 0.5rem;
+                transition: text-decoration 0.3s ease;
+                img {
+                    max-width: 2rem;
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        .right {
+            p {
+                font-size: 1.4rem;
+            }
+        }
     }
     @include responsive(845px) {
         .footer-container {
             @include flex(column, center, center);
             gap: 2rem;
+            .left {
+                align-items: center;
+            }
             p {
                 text-align: center;
             }

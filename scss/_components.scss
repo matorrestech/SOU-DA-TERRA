@@ -1,89 +1,46 @@
 .form {
+    padding: 1.5rem;
     width: 100%;
     max-width: 55rem;
     @include flex(column, center, center);
-    background-color: $green;
+    background-color: $primary;
     border-radius: 2rem;
     p {
-        color: $white;
-        padding: 1rem;
+        color: $light;
         text-align: center;
     }
 
     form {
         width: 100%;
-        @include flex(column, center, center);
+        .form-group {
+            @include flex(column, center, center);
+            padding: 1rem 0;
+        }
         input {
             width: 100%;
-            max-width: 50rem;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 1rem;
-            background-color: $white;
-            color: $green;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background-color: $light;
             font-size: 1.6rem;
             &::placeholder {
-                color: rgba($brown, 0.5);
+                color: rgba($dark, 0.5);
             }
         }
         button {
             width: 100%;
-            max-width: 50rem;
+            margin-top: 1rem;
             padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 1rem;
-            background-color: $brown;
-            color: $white;
+            border-radius: 0.5rem;
+            box-sizing: border-box;
+            background-color: $secondary;
+            color: $light;
             font-size: 2.5rem;
             cursor: pointer;
             font-weight: 600;
             text-align: center;
             transition: background-color 0.3s ease;
             &:hover {
-                background-color: darken($brown, 5%);
-            }
-        }
-    }
-    @include responsive(1119px) {
-        max-width: 40rem;
-        form {
-            input {
-                max-width: 35rem;
-            }
-            button {
-                max-width: 35rem;
-            }
-        }
-    }
-    @include responsive(845px) {
-        max-width: 60rem;
-        form {
-            input {
-                max-width: 55rem;
-            }
-            button {
-                max-width: 55rem;
-            }
-        }
-    }
-    @include responsive(617px) {
-        max-width: 40rem;
-        form {
-            input {
-                max-width: 35rem;
-            }
-            button {
-                max-width: 35rem;
-            }
-        }
-    }
-    @include responsive(468px) {
-        form {
-            input {
-                max-width: 30rem;
-            }
-            button {
-                max-width: 28rem;
+                background-color: darken($secondary, 10%);
             }
         }
     }
@@ -92,20 +49,50 @@
 .hero-footer {
     @include flex(row, center, center);
     gap: 2.5rem;
-    background-color: $brown;
+    background-color: $secondary;
     p {
-        color: $white;
+        color: $light;
         font-weight: 500;
     }
     .first {
-        color: rgba($white, 0.25);
+        color: rgba($light, 0.25);
     }
     .second {
-        color: rgba($white, 0.5);
+        color: rgba($light, 0.5);
     }
     @include responsive(468px) {
         .second {
             display: none;
         }
+    }
+}
+
+.kit-card {
+    @include flex(column, center, center);
+    gap: 1rem;
+    border: 2px solid $secondary;
+    border-radius: 2rem;
+    background-color: rgba($secondary, 0.15);
+    padding: 2rem;
+    h6 {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+    a {
+        @include flex(row, center, center);
+        gap: 1rem;
+        color: $secondary;
+        font-size: 1.8rem;
+        font-weight: 500;
+        img {
+            width: 2rem;
+        }
+        transition: text-decoration 0.3s ease;
+        &:hover {
+            text-decoration: 2px underline;
+        }
+    }
+    @include responsive(693px) {
+        width: 100%;
     }
 }

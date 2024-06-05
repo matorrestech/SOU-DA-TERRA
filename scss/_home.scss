@@ -1,4 +1,5 @@
 .s-hero {
+    padding-top: 10rem;
     position: relative;
 
     &::before,
@@ -26,12 +27,11 @@
     .hero-container {
         @include flex(row, center, center);
         gap: 2.4rem;
-        padding: 10rem 0;
+        margin-bottom: 5rem;
     }
 
     .text {
         width: 100%;
-        max-width: 55rem;
         text-align: center;
         h2 {
             span {
@@ -39,8 +39,16 @@
                 font-size: 8rem;
                 line-height: 180%;
             }
+            strong {
+                padding: 0 0.8rem;
+                background-color: $primary;
+                color: $light;
+                border-radius: 0.5rem;
+                font-weight: 400;
+            }
         }
     }
+
     @include responsive(1119px) {
         .text {
             max-width: 40rem;
@@ -73,14 +81,18 @@
         }
     }
     @include responsive(468px) {
+        padding: 3rem 0;
         background-size: auto;
+
         .hero-container {
-            max-width: 37rem;
+            width: 100%;
             margin: 0 auto;
-            padding: 3rem 0;
+            margin-bottom: 3rem;
             .text {
-                span {
-                    font-size: 6rem;
+                h2 {
+                    span {
+                        font-size: 5rem;
+                    }
                 }
             }
         }
@@ -88,30 +100,19 @@
 }
 
 .s-bem-estar {
+    padding: 4rem 0;
     text-align: center;
-    h2 {
-        padding: 4rem 0;
-    }
+    margin: 0 auto;
     img {
-        width: 100%;
-        max-width: 100rem;
+        max-width: 71rem;
+        padding: 4rem 0;
         margin: 0 auto;
-        margin-bottom: 4rem;
     }
     p {
-        width: 100%;
-        max-width: 100rem;
-        margin: 0 auto;
         line-height: 180%;
-        margin-bottom: 4rem;
     }
     @include responsive(468px) {
-        h2 {
-            padding-bottom: 2rem;
-        }
-        img {
-            margin-bottom: 2rem;
-        }
+        padding: 0 0 3rem 0;
     }
 }
 
@@ -119,6 +120,7 @@
     background-image: url("../imgs/oleos-essenciais.webp");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     padding: 4rem 0;
     h2 {
         margin-bottom: 4rem;
@@ -127,16 +129,18 @@
         @include flex(row, center, center);
         gap: 2.4rem;
         width: 100%;
-        iframe {
-            max-width: 56rem;
-        }
-        p {
-            background-color: rgba($white, 0.6);
+        .text {
+            background-color: rgba($light, 0.6);
+            padding: 2rem;
             border-radius: 2rem;
             max-width: 60rem;
-            text-align: justify;
-            padding: 4rem 1rem;
-            line-height: 180%;
+            iframe {
+                max-width: 100%;
+            }
+            p {
+                text-align: justify;
+                line-height: 180%;
+            }
         }
     }
     @include responsive(1119px) {
@@ -146,45 +150,36 @@
             iframe {
                 max-width: 100%;
             }
-            p {
-                max-width: 100%;
-            }
         }
-    }
-    @include responsive(468px) {
-        background-position: center;
     }
 }
 
 .s-qualidade {
-    margin-top: 6rem;
+    padding: 4rem 0;
     .qualidade-container {
         @include flex(row, center, center);
         gap: 10rem;
-        margin-bottom: 6rem;
         .card {
+            padding: 1rem;
             @include flex(column, center, center);
             gap: 1rem;
             img {
                 max-width: 10rem;
             }
             h5 {
-                color: $green;
+                color: $primary;
                 font-weight: 500;
             }
         }
     }
     h2 {
-        max-width: 100rem;
         text-align: center;
         margin: 0 auto;
-        margin-bottom: 4rem;
+        padding: 3rem 0;
     }
     p {
-        max-width: 100rem;
         text-align: center;
         margin: 0 auto;
-        margin-bottom: 4rem;
         line-height: 180%;
     }
     @include responsive(1119px) {
@@ -209,43 +204,16 @@
 }
 
 .s-kits {
+    padding: 3rem 0;
     h2 {
-        max-width: 100rem;
         text-align: center;
         margin: 0 auto;
-        margin-bottom: 4rem;
     }
     .kits-container {
         @include flex(row, center, center);
         gap: 2rem;
-        margin-bottom: 4rem;
-        .kit-card {
-            @include flex(column, center, center);
-            gap: 1rem;
-            border: 2px solid $brown;
-            border-radius: 2rem;
-            background-color: rgba($brown, 0.15);
-            padding: 1rem;
-            h6 {
-                color: $brown;
-                font-size: 1.8rem;
-                font-weight: 400;
-            }
-            a {
-                @include flex(row, center, center);
-                gap: 1rem;
-                color: $brown;
-                font-size: 1.8rem;
-                font-weight: 500;
-                img {
-                    width: 2rem;
-                }
-                transition: text-decoration 0.3s ease;
-                &:hover {
-                    text-decoration: 2px underline;
-                }
-            }
-        }
+        padding: 3rem 0;
+        width: 100%;
     }
     @include responsive(1119px) {
         .kits-container {
@@ -260,23 +228,23 @@
     background-repeat: no-repeat;
     padding: 4rem 0;
     h2 {
-        max-width: 100rem;
-        font-weight: 400;
         text-align: center;
         margin: 0 auto;
-        margin-bottom: 4rem;
     }
     .s-cta-container {
         @include flex(row, center, center);
         gap: 2.4rem;
+        padding: 3rem 0;
         .text {
             max-width: 60rem;
-            p {
-                text-align: justify;
-                background-color: rgba($white, 0.6);
+            .box {
+                background-color: rgba($light, 0.6);
                 border-radius: 2rem;
-                padding: 3rem 2rem;
+                padding: 2rem;
                 margin-bottom: 2rem;
+                p {
+                    text-align: justify;
+                }
             }
             h4 {
                 font-weight: 400;

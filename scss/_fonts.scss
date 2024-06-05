@@ -1,16 +1,16 @@
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
     font-family: "Poppins", sans-serif;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 120%;
-    color: $brown;
+    color: $secondary;
 }
 
 h2 {
     font-size: 4rem;
-    font-weight: 400;
     @include responsive(617px) {
         font-size: 3rem;
     }
@@ -35,7 +35,7 @@ p {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 1.8rem;
-    color: $brown;
+    color: $dark;
     @include responsive(468px) {
         font-size: 1.5rem;
         line-height: 150%;

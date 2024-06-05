@@ -1,0 +1,40 @@
+.s-privacidade {
+    padding: 4rem 0;
+    h2 {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    p {
+        text-align: justify;
+    }
+    h5 {
+        font-weight: 500;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+    ul {
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        li {
+            font-size: 1.8rem;
+            list-style: circle;
+            color: $dark;
+        }
+    }
+    a {
+        display: inline;
+        color: $primary;
+        transition: text-decoration 0.3s ease;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @include responsive(617px) {
+        ul {
+            li {
+                font-size: 1.5rem;
+                padding-left: 1rem;
+            }
+        }
+    }
+}
